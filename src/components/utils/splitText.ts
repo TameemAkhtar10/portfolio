@@ -26,6 +26,7 @@ export default function setSplitText() {
       para.split?.revert();
     }
 
+    if (!para) return;
     para.split = new SplitText(para, {
       type: "lines,words",
       linesClass: "split-line",
@@ -53,6 +54,7 @@ export default function setSplitText() {
       title.anim.progress(1).kill();
       title.split?.revert();
     }
+    if (!title) return;
     title.split = new SplitText(title, {
       type: "chars,lines",
       linesClass: "split-line",
