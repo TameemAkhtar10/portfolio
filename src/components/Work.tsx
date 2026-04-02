@@ -19,14 +19,14 @@ const Work = () => {
         category: "AI Chatbot",
         toolsLabel: "Tools and features",
         techStack: "Javascript, React, Node.js, Express.js, MongoDB, RAG, Generative AI",
-        image: "/public/images/veltrix.png",
+        image: "/images/veltrix.png",
       },
       {
         name: "Cineverse ",
         category: "Movie  Platform",
         toolsLabel: "Tools and features",
         techStack: "Javascript, React, Threejs ,Node.js, Express.js, MongoDB,TMDB API,Threejs,",
-        image: "/public/images/cineverse.png",
+        image: "/images/cineverse.png",
       },
       {
         name: "Moodify",
@@ -55,7 +55,7 @@ const Work = () => {
   );
 
   const [current, setCurrent] = useState(0);
-  const total = 4;
+  const total = 5;
 
   const prev = () => setCurrent((c) => (c - 1 + total) % total);
   const next = () => setCurrent((c) => (c + 1) % total);
