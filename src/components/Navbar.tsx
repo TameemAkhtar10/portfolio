@@ -2,18 +2,18 @@ import { useEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import HoverLinks from "./HoverLinks";
 import { gsap } from "gsap";
-import { ScrollSmoother } from "gsap-trial/ScrollSmoother";
+import { ScrollSmoother } from "gsap/ScrollSmoother";
+import { setSmoother } from "./utils/smoother";
 import "./styles/Navbar.css";
 
 gsap.registerPlugin(ScrollSmoother, ScrollTrigger);
 (gsap as unknown as { config: (value: { trialWarn: boolean }) => void }).config({
   trialWarn: false,
 });
-export let smoother: ScrollSmoother;
 
 const Navbar = () => {
   useEffect(() => {
-    smoother = ScrollSmoother.create({
+    const smoother = ScrollSmoother.create({
       wrapper: "#smooth-wrapper",
       content: "#smooth-content",
       smooth: 1.7,
@@ -22,6 +22,7 @@ const Navbar = () => {
       autoResize: true,
       ignoreMobileResize: true,
     });
+    setSmoother(smoother);
 
     smoother.scrollTop(0);
     smoother.paused(true);

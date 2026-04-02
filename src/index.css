@@ -152,10 +152,7 @@ body {
   font-weight: 400;
   text-transform: uppercase;
 }
-body {
- --webkit-scrollbar-width: none;
- scrollbar-width: none; 
-}
+
 .techstack-canvas-wrapper {
   position: absolute;
   inset: 0;

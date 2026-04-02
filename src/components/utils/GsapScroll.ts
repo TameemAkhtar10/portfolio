@@ -1,6 +1,15 @@
 import * as THREE from "three";
 import gsap from "gsap";
 
+type LightMaterial = THREE.Material & {
+  transparent: boolean;
+  opacity: number;
+  emissive: THREE.Color;
+  emissiveIntensity: number;
+  color: THREE.Color;
+  name: string;
+};
+
 export function setCharTimeline(
   character: THREE.Object3D<THREE.Object3DEventMap> | null,
   camera: THREE.PerspectiveCamera
@@ -36,32 +45,42 @@ export function setCharTimeline(
       invalidateOnRefresh: true,
     },
   });
-  let screenLight: any, monitor: any;
-  character?.children.forEach((object: any) => {
+  let screenLight: THREE.Mesh | null = null;
+  let monitor: THREE.Mesh | null = null;
+  character?.children.forEach((object) => {
     if (object.name === "Plane004") {
-      object.children.forEach((child: any) => {
-        child.material.transparent = true;
-        child.material.opacity = 0;
-        if (child.material.name === "Material.027") {
-          monitor = child;
-          child.material.color.set("#FFFFFF");
+      object.children.forEach((child) => {
+        const mesh = child as THREE.Mesh;
+        const material = mesh.material as LightMaterial;
+        material.transparent = true;
+        material.opacity = 0;
+        if (material.name === "Material.027") {
+          monitor = mesh;
+          material.color.set("#FFFFFF");
         }
       });
     }
     if (object.name === "screenlight") {
-      object.material.transparent = true;
-      object.material.opacity = 0;
-      object.material.emissive.set("#C8BFFF");
-      gsap.timeline({ repeat: -1, repeatRefresh: true }).to(object.material, {
+      const mesh = object as THREE.Mesh;
+      const material = mesh.material as LightMaterial;
+      material.transparent = true;
+      material.opacity = 0;
+      material.emissive.set("#C8BFFF");
+      gsap.timeline({ repeat: -1, repeatRefresh: true }).to(material, {
         emissiveIntensity: () => intensity * 8,
         duration: () => Math.random() * 0.6,
         delay: () => Math.random() * 0.1,
       });
-      screenLight = object;
+      screenLight = mesh;
     }
   });
   if (window.innerWidth > 1024) {
-    if (character) {
+    if (character && monitor && screenLight) {
+      const monitorMesh = monitor as THREE.Mesh;
+      const screenLightMesh = screenLight as THREE.Mesh;
+      const monitorMaterial = monitorMesh.material as LightMaterial;
+      const screenLightMaterial = screenLightMesh.material as LightMaterial;
+
       tl1
         .fromTo(character.rotation, { y: 0 }, { y: 0.7, duration: 1 }, 0)
         .to(camera.position, { z: 22 }, 0)
@@ -85,8 +104,8 @@ export function setCharTimeline(
           0
         )
         .to(character.rotation, { y: 0.92, x: 0.12, delay: 3, duration: 3 }, 0)
-        .to(monitor.material, { opacity: 1, duration: 0.8, delay: 3.2 }, 0)
-        .to(screenLight.material, { opacity: 1, duration: 0.8, delay: 4.5 }, 0)
+        .to(monitorMaterial, { opacity: 1, duration: 0.8, delay: 3.2 }, 0)
+        .to(screenLightMaterial, { opacity: 1, duration: 0.8, delay: 4.5 }, 0)
         .fromTo(
           ".what-box-in",
           { display: "none" },
@@ -94,7 +113,7 @@ export function setCharTimeline(
           0
         )
         .fromTo(
-          monitor.position,
+          monitorMesh.position,
           { y: -10, z: 2 },
           { y: 0, z: 0, delay: 1.5, duration: 3 },
           0

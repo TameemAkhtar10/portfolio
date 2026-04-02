@@ -60,27 +60,51 @@ const SocialIcons = () => {
     <div className="icons-section">
       <div className="social-icons" data-cursor="icons" id="social">
         <span>
-          <a href="https://github.com/TameemAkhtar10" target="_blank">
+          <a
+            href="https://github.com/TameemAkhtar10"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="GitHub"
+            aria-label="GitHub"
+          >
             <FaGithub />
           </a>
         </span>
         <span>
-          <a href="https://www.linkedin.com/in/tameem-akhtar-b94117343/" target="_blank">
+          <a
+            href="https://www.linkedin.com/in/tameem-akhtar-b94117343/"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="LinkedIn"
+            aria-label="LinkedIn"
+          >
             <FaLinkedinIn />
           </a>
         </span>
         <span>
-          <a href="https://x.com/AkhtarTami21717" target="_blank">
+          <a
+            href="https://x.com/AkhtarTami21717"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="X"
+            aria-label="X"
+          >
             <FaXTwitter />
           </a>
         </span>
         <span>
-          <a href="https://www.instagram.com/tamimm_10" target="_blank">
+          <a
+            href="https://www.instagram.com/tamimm_10"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Instagram"
+            aria-label="Instagram"
+          >
             <FaInstagram />
           </a>
         </span>
       </div>
-      <a className="resume-button" href="#">
+      <a className="resume-button" href="#" title="Resume" aria-label="Resume">
         <HoverLinks text="RESUME" />
         <span>
           <TbNotes />

@@ -17,7 +17,7 @@ const Contact = () => {
             <h4>Phone</h4>
             <p>
               <a href="tel:+9199999999" data-cursor="disable">
-    9765587427
+                9765587427
               </a>
             </p>
           </div>
@@ -26,6 +26,7 @@ const Contact = () => {
             <a
               href="https://github.com/TameemAkhtar10"
               target="_blank"
+              rel="noopener noreferrer"
               data-cursor="disable"
               className="contact-social"
             >
@@ -34,6 +35,7 @@ const Contact = () => {
             <a
               href="https://www.linkedin.com/in/tameem-akhtar-b94117343/"
               target="_blank"
+              rel="noopener noreferrer"
               data-cursor="disable"
               className="contact-social"
             >
@@ -42,6 +44,7 @@ const Contact = () => {
             <a
               href="https://x.com/AkhtarTami21717"
               target="_blank"
+              rel="noopener noreferrer"
               data-cursor="disable"
               className="contact-social"
             >
@@ -50,6 +53,7 @@ const Contact = () => {
             <a
               href="https://www.instagram.com/tamimm_10"
               target="_blank"
+              rel="noopener noreferrer"
               data-cursor="disable"
               className="contact-social"
             >
