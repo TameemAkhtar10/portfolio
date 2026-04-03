@@ -3,7 +3,7 @@
   max-width: var(--cMaxWidth);
   width: var(--cWidth);
   justify-content: space-between;
-  padding: 20px 0px;
+  padding: clamp(12px, 3vw, 35px) 0px;
   margin-bottom: -100px;
   box-sizing: border-box;
   position: fixed;
@@ -14,23 +14,25 @@
 }
 
 .header ul {
-  font-size: 12px;
+  font-size: clamp(10px, 2.5vw, 16px);
   display: flex;
   flex-direction: column;
   margin: 0;
   padding: 0;
   list-style: none;
-  column-gap: 40px;
-  row-gap: 8px;
-  align-items: end;
+  column-gap: clamp(20px, 4vw, 80px);
+  row-gap: clamp(4px, 1vw, 8px);
+  align-items: flex-end;
+  gap: clamp(8px, 2vw, 80px);
 }
 
 .header ul li {
   margin-left: 0px;
-  letter-spacing: 1px;
+  letter-spacing: clamp(0.5px, 1vw, 1px);
   color: #ccc;
   font-weight: 600;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .navbar-connect {
@@ -39,26 +41,67 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  font-size: 15px;
+  font-size: clamp(12px, 2vw, 16px);
   letter-spacing: 1px;
   font-weight: 500;
 }
 
 .navbar-title {
   font-weight: 700;
-  font-size: 14px;
+  font-size: clamp(12px, 2.5vw, 18px);
   letter-spacing: 0.2px;
   display: inline-flex;
   align-items: center;
 }
 
 .navbar-logo {
-  width: 132px;
+  width: clamp(100px, 15vw, 170px);
   height: auto;
   display: block;
 }
 
-@media only screen and (min-width: 500px) {
+/* Mobile (320px - 480px) */
+@media only screen and (max-width: 480px) {
+  .header {
+    padding: 10px 0px;
+    flex-wrap: wrap;
+  }
+
+  .header ul {
+    flex-basis: 100%;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .navbar-connect {
+    display: none !important;
+  }
+}
+
+/* Small Mobile (481px - 600px) */
+@media only screen and (min-width: 481px) and (max-width: 600px) {
+  .header {
+    padding: 15px 0px;
+  }
+
+  .header ul {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .navbar-title {
+    font-size: 14px;
+  }
+
+  .navbar-logo {
+    width: 120px;
+  }
+}
+
+/* Tablet (601px - 900px) */
+@media only screen and (min-width: 601px) and (max-width: 900px) {
   .header {
     padding: 20px 0px;
   }
@@ -66,7 +109,7 @@
   .header ul {
     flex-direction: row;
     align-items: center;
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .header ul li {
@@ -74,20 +117,30 @@
   }
 
   .navbar-title {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .navbar-logo {
-    width: 148px;
+    width: 130px;
+  }
+
+  .navbar-connect {
+    display: none !important;
   }
 }
 
-@media only screen and (min-width: 900px) {
+/* Small Desktop (901px - 1200px) */
+@media only screen and (min-width: 901px) and (max-width: 1200px) {
+  .header {
+    padding: 25px 0px;
+  }
+
   .navbar-connect {
     display: block;
   }
 }
 
+/* Large Desktop (1200px+) */
 @media only screen and (min-width: 1200px) {
   .header {
     padding: 35px 0px;
@@ -100,6 +153,7 @@
 
   .navbar-connect {
     font-size: 16px;
+    display: block;
   }
 
   .navbar-title {

@@ -9,24 +9,38 @@
   pointer-events: none;
   z-index: 99;
   background-color: #e6c3ff;
-  box-shadow: 0px 0px 30px 0px rgb(175, 131, 255);
+  box-shadow: 0px 0px clamp(15px, 5vw, 30px) 0px rgb(175, 131, 255);
   mix-blend-mode: difference;
   transition: top 0.3s ease-out, left 0.3s ease-out, width 0.3s ease-out,
     height 0.3s ease-out;
 }
+
 .cursor-icons {
-  top: 10px;
-  left: 10px;
-  height: calc(var(--cursorH) - 20px);
+  top: clamp(5px, 2vw, 10px);
+  left: clamp(5px, 2vw, 10px);
+  height: calc(var(--cursorH) - clamp(10px, 4vw, 20px));
   transition: all 0.5s ease-out, height 0.5s ease-in-out;
 }
+
 .cursor-disable {
   --size: 0px;
 }
+
+@media only screen and (max-width: 599px) {
+  .cursor-main {
+    --size: 0px;
+  }
+
+  .cursor-disable {
+    --size: 0px;
+  }
+}
+
 @media only screen and (min-width: 600px) {
   .cursor-main {
-    --size: 50px;
+    --size: clamp(30px, 6vw, 50px);
   }
+
   .cursor-disable {
     --size: 0px;
   }

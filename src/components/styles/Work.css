@@ -1,6 +1,6 @@
 .work-section h2 {
-  margin-top: 100px;
-  font-size: 70px;
+  margin-top: clamp(40px, 5vw, 100px);
+  font-size: clamp(28px, 8vw, 70px);
   font-weight: 500;
 }
 
@@ -9,10 +9,12 @@
 }
 
 .work-section {
-  height: 100vh;
+  height: auto;
+  min-height: 100vh;
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
+  padding: clamp(20px, 5vw, 50px) 0;
 }
 
 .work-container {
@@ -30,17 +32,35 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 400px;
 }
 
 .work-card {
-  width: min(1200px, calc(100% - 180px));
-  min-height: min(560px, calc(100vh - 300px));
+  width: min(1200px, calc(100% - 20px));
+  min-height: auto;
   display: grid;
-  grid-template-columns: minmax(280px, 35%) minmax(380px, 1fr);
-  gap: 40px;
+  grid-template-columns: 1fr;
+  gap: clamp(20px, 5vw, 40px);
   align-items: center;
   position: relative;
   animation: workCardIn 0.45s ease;
+}
+
+/* Tablet and up */
+@media only screen and (min-width: 601px) {
+  .work-card {
+    grid-template-columns: minmax(250px, 35%) minmax(320px, 1fr);
+  }
+}
+
+/* Medium Desktop and up */
+@media only screen and (min-width: 1024px) {
+  .work-card {
+    width: min(1200px, calc(100% - 180px));
+    min-height: min(560px, calc(100vh - 300px));
+    grid-template-columns: minmax(280px, 35%) minmax(380px, 1fr);
+    gap: 40px;
+  }
 }
 
 .work-info {
@@ -62,14 +82,14 @@
 }
 
 .work-title h3 {
-  font-size: 50px;
-  line-height: 50px;
+  font-size: clamp(24px, 6vw, 50px);
+  line-height: clamp(24px, 6vw, 50px);
   margin: 0;
   font-weight: 600;
 }
 
 .work-info h4 {
-  font-size: 18px;
+  font-size: clamp(14px, 3vw, 18px);
   font-weight: 400;
   margin: 0;
 }
@@ -79,6 +99,7 @@
   color: #adacac;
   margin: 0;
   margin-top: 6px;
+  font-size: clamp(12px, 2.5vw, 16px);
 }
 
 .work-preview {

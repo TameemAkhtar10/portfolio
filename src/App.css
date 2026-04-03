@@ -1,6 +1,8 @@
 .section-container {
-  width: 1300px;
+  width: clamp(280px, 90%, 1300px);
+  margin: auto;
 }
+
 .title,
 .para {
   font-kerning: none;
@@ -9,20 +11,57 @@
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
 }
-@media only screen and (max-width: 1600px) {
+
+/* Mobile (320px - 480px) */
+@media only screen and (max-width: 480px) {
+  .section-container {
+    width: calc(100% - 20px);
+    max-width: 100%;
+  }
+}
+
+/* Small Mobile (481px - 600px) */
+@media only screen and (min-width: 481px) and (max-width: 600px) {
+  .section-container {
+    width: calc(100% - 40px);
+    max-width: 100%;
+  }
+}
+
+/* Tablet (601px - 900px) */
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+  .section-container {
+    width: 500px;
+    max-width: var(--cWidth);
+  }
+}
+
+/* Small Desktop (901px - 1200px) */
+@media only screen and (min-width: 901px) and (max-width: 1200px) {
+  .section-container {
+    width: 800px;
+    max-width: 90%;
+  }
+}
+
+/* Medium Desktop (1201px - 1400px) */
+@media only screen and (min-width: 1201px) and (max-width: 1400px) {
+  .section-container {
+    width: 900px;
+  }
+}
+
+/* Large Desktop (1401px - 1600px) */
+@media only screen and (min-width: 1401px) and (max-width: 1600px) {
   .section-container {
     width: 1200px;
     max-width: calc(100% - 160px);
   }
 }
-@media only screen and (max-width: 1400px) {
+
+/* Extra Large Desktop (1600px+) */
+@media only screen and (min-width: 1601px) {
   .section-container {
-    width: 900px;
-  }
-}
-@media only screen and (max-width: 900px) {
-  .section-container {
-    width: 500px;
-    max-width: var(--cWidth);
+    width: 1300px;
   }
 }
