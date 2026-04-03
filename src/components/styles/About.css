@@ -8,73 +8,40 @@
   height: auto;
   width: var(--cWidth);
   margin: auto;
-  flex-direction: column;
-  gap: 2rem;
 }
 
 .about-me {
-  padding: 30px 0px;
+  padding: 50px 0px;
   padding-bottom: 0;
-  width: 100%;
-  max-width: 500px;
+  width: 500px;
+  max-width: calc(100% - 15px);
 }
 
 .about-me h3 {
-  font-size: clamp(16px, 5vw, 25px);
+  font-size: 25px;
   text-transform: uppercase;
-  letter-spacing: clamp(3px, 2vw, 7px);
+  letter-spacing: 7px;
   font-weight: 400;
   color: var(--accentColor);
 }
 
 .about-me p {
-  font-size: clamp(18px, 6vw, 33px);
+  font-size: 33px;
   font-weight: 600;
-  line-height: clamp(20px, 7vw, 36px);
+  line-height: 36px;
   letter-spacing: 1px;
   font-family: cursive;
 }
 
-/* Mobile (320px - 480px) */
-@media only screen and (max-width: 480px) {
-  .about-section {
-    padding: 20px 0;
-    gap: 1rem;
-  }
-
-  .about-me {
-    padding: 20px 0;
-  }
-}
-
-/* Small Mobile (481px - 600px) */
-@media only screen and (min-width: 481px) and (max-width: 600px) {
+@media only screen and (min-width: 600px) {
   .about-section {
     justify-content: center;
   }
-
-  .about-me {
-    max-width: calc(100% - 20px);
-  }
 }
 
-/* Tablet (601px - 768px) */
-@media only screen and (min-width: 601px) and (max-width: 768px) {
-  .about-section {
-    justify-content: center;
-  }
-
+@media only screen and (min-width: 768px) {
   .about-me {
-    width: 90%;
-    max-width: calc(100% - 30px);
-    transform: translateY(0%);
-  }
-}
-
-/* Small Tablet to Desktop (769px - 1024px) */
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
-  .about-me {
-    width: 85%;
+    width: 500px;
     max-width: calc(100% - 70px);
     transform: translateY(0%);
   }
@@ -84,8 +51,7 @@
   }
 }
 
-/* Medium Desktop (1025px - 1440px) */
-@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+@media only screen and (min-width: 1025px) {
   .about-section {
     width: var(--cWidth);
     justify-content: right;
@@ -93,7 +59,6 @@
     height: var(--vh);
     padding: 0px;
     opacity: 1;
-    flex-direction: row;
   }
 
   .about-me {
@@ -102,30 +67,14 @@
   }
 
   .about-me p {
-    font-size: clamp(24px, 1.9vw, 36px);
-    line-height: clamp(26px, 2.3vw, 40px);
+    font-size: 1.9vw;
+    line-height: 2.3vw;
   }
 }
 
-/* Large Desktop (1441px+) */
-@media only screen and (min-width: 1441px) {
-  .about-section {
-    width: var(--cWidth);
-    justify-content: right;
-    max-width: 1920px;
-    height: var(--vh);
-    padding: 0px;
-    opacity: 1;
-    flex-direction: row;
-  }
-
-  .about-me {
-    padding: 0px;
-    width: 50%;
-  }
-
+@media only screen and (min-width: 1950px) {
   .about-me p {
-    font-size: clamp(28px, 2vw, 42px);
-    line-height: clamp(30px, 2.4vw, 44px);
+    font-size: 2.5rem;
+    line-height: 2.7rem;
   }
 }

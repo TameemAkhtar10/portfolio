@@ -17,6 +17,7 @@ const Work = () => {
       {
         name: "Veltrix -AI Chatbot",
         category: "AI Chatbot",
+        link: "https://veltrix-bn4b.onrender.com/",
         toolsLabel: "Tools and features",
         techStack: "Javascript, React, Node.js, Express.js, MongoDB, RAG, Generative AI",
         image: "/images/veltrix.png",
@@ -24,6 +25,7 @@ const Work = () => {
       {
         name: "Cineverse ",
         category: "Movie  Platform",
+        link: "https://cineverse-0ciy.onrender.com/",
         toolsLabel: "Tools and features",
         techStack: "Javascript, React, Threejs ,Node.js, Express.js, MongoDB,TMDB API,Threejs,",
         image: "/images/cineverse.png",
@@ -31,6 +33,7 @@ const Work = () => {
       {
         name: "Moodify",
         category: "Mood Tracking App",
+        link: "https://moodify-ny2y.onrender.com/",
         toolsLabel: "Tools and features",
         techStack: "Javascript, , React, Node.js, Express.js, MongoDB, MediaPipe ,Redis",
         image: "/images/moodify.png",
@@ -38,6 +41,7 @@ const Work = () => {
       {
         name: "DealSlayer",
         category: "AI Negotiation Tool",
+        link: "https://negotiation-arena.onrender.com/",
         toolsLabel: "Tools and features",
         techStack: "Javascript, React, Node.js, Express.js, MongoDB,",
         image: "/images/nego.png",
@@ -46,6 +50,7 @@ const Work = () => {
       {
         name: "MacFolio",
         category: "MacOs style Portfolio",
+        link:"https://the-macc-folio.vercel.app/" ,
         toolsLabel: "Tools and features",
         techStack: "Javascript, React, Tailwind CSS,RND  ",
         image: "/images/Macc.png",
